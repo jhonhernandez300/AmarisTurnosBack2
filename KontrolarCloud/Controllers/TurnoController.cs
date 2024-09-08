@@ -44,6 +44,27 @@ namespace KontrolarCloud.Controllers
         }
 
         [AllowAnonymous]
+        [HttpGet("GetTurno/{id}")]
+        public async Task<IActionResult> GetTurno(int id)
+        {
+            if (id <= 0)
+                return BadRequest("El id proporcionado no es válido.");
+            
+            (Turnos turno, string message) = await _turnoService.GetTurnoByIdAsync(id); 
+            
+            if (message == "No existe un turno con ese Id." || message == "No se encontró el turno.")
+                return NotFound(message); // Cambio: devolver el mensaje del SP
+
+            
+            if (message != "Consulta exitosa.")
+                return StatusCode(500, message); 
+            
+            var turnoCompletoDto = _mapper.Map<TurnoCompletoDTO>(turno);
+
+            return Ok(new { turno = turnoCompletoDto, message }); 
+        }
+
+        [AllowAnonymous]
         [HttpPut("UpdateTurno/{id}")]
         public async Task<IActionResult> UpdateTurno(int id, [FromBody] TurnosDTO turnoDto)
         {
@@ -80,16 +101,8 @@ namespace KontrolarCloud.Controllers
             int newIdTurno = await _turnoService.CreateTurnoAsync(mapeado);
 
             // Retornar el resultado con el Id generado
-            return CreatedAtAction(nameof(GetTurnoById), new { id = newIdTurno }, new { IdTurno = newIdTurno });
-        }
-
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetTurnoById(int id)
-        {
-            // Implementar la lógica para obtener el turno por ID si es necesario.
-            // Esto puede implicar otro SP o un método en el servicio.
-            return NotFound();
-        }
+            return Ok(new {mapeado});
+        }        
 
         //[AllowAnonymous]
         //[HttpPost("CrearTurnoAsync")]

@@ -8,6 +8,7 @@ namespace KontrolarCloud.Mapping
         public MappingTurnos()
         {
             CreateMap<TurnosDTO, Turnos>();
+            CreateMap<Turnos, TurnoCompletoDTO>();
         }
     }
 }

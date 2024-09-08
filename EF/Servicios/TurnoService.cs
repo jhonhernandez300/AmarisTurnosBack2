@@ -18,12 +18,56 @@ namespace EF.Servicios
 
         public TurnoService(string connectionString)
         {
-            if (string.IsNullOrEmpty(connectionString)) // nuevo: validamos que la cadena de conexión no esté vacía
+            if (string.IsNullOrEmpty(connectionString)) 
             {
                 throw new ArgumentNullException(nameof(connectionString), "Connection string cannot be null or empty.");
             }
             _connectionString = connectionString;
         }
+
+        public async Task<(Turnos turno, string message)> GetTurnoByIdAsync(int id)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                using (var command = new SqlCommand("GetTurnoById", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@IdTurno", id);
+
+                    await connection.OpenAsync();
+
+                    using (var reader = await command.ExecuteReaderAsync())
+                    {
+                        if (await reader.ReadAsync())
+                        {                            
+                            if (reader.FieldCount == 5) 
+                            {
+                                var turno = new Turnos
+                                {
+                                    IdTurno = reader.GetInt32(0),
+                                    IdUsuario = reader.GetInt32(1),
+                                    IdSucursal = reader.GetInt32(2),
+                                    FechaTurno = reader.GetDateTime(3),
+                                    Estado = reader.GetString(4)
+                                };
+
+                                return (turno, "Consulta exitosa.");
+                            }
+                            else
+                            {
+                                // Caso en el que la primera fila es un mensaje de error
+                                var message = reader.GetString(0);
+                                return (null, message);
+                            }
+                        }
+
+                        // Caso cuando no hay datos
+                        return (null, "No se encontró el turno.");
+                    }
+                }
+            }
+        }
+
 
         public async Task<int> CreateTurnoAsync(Turnos turnos)
         {
