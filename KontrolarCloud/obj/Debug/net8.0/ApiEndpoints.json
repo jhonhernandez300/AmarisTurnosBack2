@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "KontrolarCloud.Controllers.TurnoController",
+    "Method": "ContarTurnos",
+    "RelativePath": "api/Turno/ContarTurnos/{idUsuario}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idUsuario",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "KontrolarCloud.Controllers.TurnoController",
     "Method": "CrearTurno",
     "RelativePath": "api/Turno/CrearTurno",
     "HttpMethod": "POST",

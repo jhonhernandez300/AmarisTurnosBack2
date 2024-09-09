@@ -25,6 +25,45 @@ namespace EF.Servicios
             _connectionString = connectionString;
         }
 
+        public async Task<int> ContarTurnosPorUsuarioAsync(string idUsuario)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+
+                using (var command = new SqlCommand("ContarTurnosPorUsuario", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.Add(new SqlParameter("@IdUsuario", SqlDbType.NVarChar, 20)).Value = idUsuario;
+                                        
+                    var numeroDeTurnosParam = new SqlParameter("@NumeroDeTurnos", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    command.Parameters.Add(numeroDeTurnosParam);
+
+                    // Ejecución del procedimiento almacenado
+                    var returnValue = new SqlParameter
+                    {
+                        Direction = ParameterDirection.ReturnValue
+                    };
+                    command.Parameters.Add(returnValue);
+
+                    await command.ExecuteNonQueryAsync();
+                    
+                    int result = (int)command.Parameters["@NumeroDeTurnos"].Value;
+                    int returnCode = (int)command.Parameters[returnValue.ParameterName].Value;
+
+                    if (returnCode == -1)
+                    {                        
+                        throw new Exception("Usuario no encontrado.");
+                    }
+
+                    return result;
+                }
+            }
+        }
+
         public async Task<List<Turnos>> GetTurnosActivadosAsync()
         {
             var turnosList = new List<Turnos>();

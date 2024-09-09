@@ -7,6 +7,18 @@
       "RelativeMoniker": "D:0:0:{8D9A44D0-F83B-4654-A803-F3B084BAF064}|KontrolarCloud.csproj|solutionrelative:controllers\\turnocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{DC07AC64-B07B-42BD-A07F-8388BA976196}|..\\Core\\Core.csproj|c:\\users\\jhon\\onedrive\\documentos\\pruebas empresas\\amaris\\back2\\core\\modelos\\interfaces\\iturnoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC07AC64-B07B-42BD-A07F-8388BA976196}|..\\Core\\Core.csproj|c:\\users\\jhon\\onedrive\\documentos\\pruebas empresas\\amaris\\back2\\core\\modelos\\turnos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC07AC64-B07B-42BD-A07F-8388BA976196}|..\\Core\\Core.csproj|c:\\users\\jhon\\onedrive\\documentos\\pruebas empresas\\amaris\\back2\\core\\modelos\\interfaces\\iturnorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76ABA5FE-6FEB-40E2-BC60-ECE31966F1D0}|..\\EF\\EF.csproj|c:\\users\\jhon\\onedrive\\documentos\\pruebas empresas\\amaris\\back2\\ef\\servicios\\turnoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8D9A44D0-F83B-4654-A803-F3B084BAF064}|KontrolarCloud.csproj|c:\\users\\jhon\\onedrive\\documentos\\pruebas empresas\\amaris\\back2\\kontrolarcloud\\mapping\\mappingturnos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8D9A44D0-F83B-4654-A803-F3B084BAF064}|KontrolarCloud.csproj|solutionrelative:mapping\\mappingturnos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -18,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 191,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -27,6 +39,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ITurnoService.cs",
+              "DocumentMoniker": "C:\\Users\\jhon\\OneDrive\\Documentos\\Pruebas empresas\\Amaris\\back2\\Core\\Modelos\\Interfaces\\ITurnoService.cs",
+              "RelativeDocumentMoniker": "..\\Core\\Modelos\\Interfaces\\ITurnoService.cs",
+              "ToolTip": "C:\\Users\\jhon\\OneDrive\\Documentos\\Pruebas empresas\\Amaris\\back2\\Core\\Modelos\\Interfaces\\ITurnoService.cs",
+              "RelativeToolTip": "..\\Core\\Modelos\\Interfaces\\ITurnoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T20:36:32.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Turnos.cs",
+              "DocumentMoniker": "C:\\Users\\jhon\\OneDrive\\Documentos\\Pruebas empresas\\Amaris\\back2\\Core\\Modelos\\Turnos.cs",
+              "RelativeDocumentMoniker": "..\\Core\\Modelos\\Turnos.cs",
+              "ToolTip": "C:\\Users\\jhon\\OneDrive\\Documentos\\Pruebas empresas\\Amaris\\back2\\Core\\Modelos\\Turnos.cs",
+              "RelativeToolTip": "..\\Core\\Modelos\\Turnos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T20:36:24.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ITurnoRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\jhon\\OneDrive\\Documentos\\Pruebas empresas\\Amaris\\back2\\Core\\Modelos\\Interfaces\\ITurnoRepositorio.cs",
+              "RelativeDocumentMoniker": "..\\Core\\Modelos\\Interfaces\\ITurnoRepositorio.cs",
+              "ToolTip": "C:\\Users\\jhon\\OneDrive\\Documentos\\Pruebas empresas\\Amaris\\back2\\Core\\Modelos\\Interfaces\\ITurnoRepositorio.cs",
+              "RelativeToolTip": "..\\Core\\Modelos\\Interfaces\\ITurnoRepositorio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T20:36:06.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TurnoService.cs",
+              "DocumentMoniker": "C:\\Users\\jhon\\OneDrive\\Documentos\\Pruebas empresas\\Amaris\\back2\\EF\\Servicios\\TurnoService.cs",
+              "RelativeDocumentMoniker": "..\\EF\\Servicios\\TurnoService.cs",
+              "ToolTip": "C:\\Users\\jhon\\OneDrive\\Documentos\\Pruebas empresas\\Amaris\\back2\\EF\\Servicios\\TurnoService.cs",
+              "RelativeToolTip": "..\\EF\\Servicios\\TurnoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T20:29:23.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "MappingTurnos.cs",
               "DocumentMoniker": "C:\\Users\\jhon\\OneDrive\\Documentos\\Pruebas empresas\\Amaris\\back2\\KontrolarCloud\\Mapping\\MappingTurnos.cs",
               "RelativeDocumentMoniker": "Mapping\\MappingTurnos.cs",
@@ -34,8 +98,7 @@
               "RelativeToolTip": "Mapping\\MappingTurnos.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-09T17:15:38.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-09T17:15:38.234Z"
             },
             {
               "$type": "Document",
@@ -45,7 +108,7 @@
               "RelativeDocumentMoniker": "Controllers\\TurnoController.cs",
               "ToolTip": "C:\\Users\\jhon\\OneDrive\\Documentos\\Pruebas empresas\\Amaris\\back2\\KontrolarCloud\\Controllers\\TurnoController.cs",
               "RelativeToolTip": "Controllers\\TurnoController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAIAwwDcAAABHAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAswEMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-09T14:49:16.99Z",
               "EditorCaption": ""

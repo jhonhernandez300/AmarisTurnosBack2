@@ -44,6 +44,29 @@ namespace KontrolarCloud.Controllers
         }
 
         [AllowAnonymous]
+        [HttpGet("ContarTurnos/{idUsuario}")]
+        public async Task<IActionResult> ContarTurnos(string idUsuario)
+        {
+            try
+            {
+                if (idUsuario == null)
+                {
+                    return BadRequest(new { message = "El id del usuario no puede ser nulo." });
+                }
+                
+                int numeroDeTurnos = await _turnoService.ContarTurnosPorUsuarioAsync(idUsuario);
+                
+                return Ok(new { NumeroDeTurnos = numeroDeTurnos });
+            }
+            catch (Exception ex)
+            {
+                // Retorna un error si ocurre algún problema
+                return BadRequest(new { Message = ex.Message });
+            }
+        }
+
+
+        [AllowAnonymous]
         [HttpGet("ObtenerTurnosActivados")]
         public async Task<IActionResult> ObtenerTurnosActivados()
         {
