@@ -1,0 +1,76 @@
+[
+  {
+    "ContainingType": "KontrolarCloud.Controllers.TurnoController",
+    "Method": "ActualizarTurno",
+    "RelativePath": "api/Turno/ActualizarTurno",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "turnoCompletoDto",
+        "Type": "Core.DTOs.TurnoCompletoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "KontrolarCloud.Controllers.TurnoController",
+    "Method": "CrearTurno",
+    "RelativePath": "api/Turno/CrearTurno",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "turnoDto",
+        "Type": "Core.DTOs.TurnosDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "KontrolarCloud.Controllers.TurnoController",
+    "Method": "ObtenerTurnoPorId",
+    "RelativePath": "api/Turno/ObtenerTurnoPorId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "KontrolarCloud.Controllers.TurnoController",
+    "Method": "ObtenerTurnosActivados",
+    "RelativePath": "api/Turno/ObtenerTurnosActivados",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "KontrolarCloud.Controllers.UsuarioController",
+    "Method": "Login",
+    "RelativePath": "api/Usuario/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginRequestDTOs",
+        "Type": "Core.DTOs.LoginRequestDTOs",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
