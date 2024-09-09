@@ -12,5 +12,6 @@ namespace Core.Modelos.Interfaces
         Task<int> CreateTurnoAsync(Turnos turnos);
         Task<(bool success, string message)> UpdateTurnoAsync(Turnos turnos);
         Task<(Turnos turno, string message)> GetTurnoByIdAsync(int id);
+        Task<List<Turnos>> GetTurnosActivadosAsync();
     }
 }

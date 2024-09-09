@@ -25,6 +25,40 @@ namespace EF.Servicios
             _connectionString = connectionString;
         }
 
+        public async Task<List<Turnos>> GetTurnosActivadosAsync()
+        {
+            var turnosList = new List<Turnos>();
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                using (var command = new SqlCommand("sp_ObtenerTurnosActivados", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    await connection.OpenAsync();
+
+                    using (var reader = await command.ExecuteReaderAsync())
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            var turno = new Turnos
+                            {
+                                IdTurno = reader.GetInt32(0),
+                                IdUsuario = reader.GetInt32(1),
+                                IdSucursal = reader.GetInt32(2),
+                                FechaTurno = reader.GetDateTime(3),
+                                Estado = reader.GetString(4)
+                            };
+
+                            turnosList.Add(turno);
+                        }
+                    }
+                }
+            }
+
+            return turnosList;
+        }
+
         public async Task<(Turnos turno, string message)> GetTurnoByIdAsync(int id)
         {
             using (var connection = new SqlConnection(_connectionString))
@@ -67,7 +101,6 @@ namespace EF.Servicios
                 }
             }
         }
-
 
         public async Task<int> CreateTurnoAsync(Turnos turnos)
         {
