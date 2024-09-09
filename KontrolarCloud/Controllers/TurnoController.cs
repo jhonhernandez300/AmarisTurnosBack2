@@ -52,7 +52,8 @@ namespace KontrolarCloud.Controllers
                 var turnos = await _turnoService.GetTurnosActivadosAsync();
                 if (turnos == null || !turnos.Any())
                 {
-                    return NotFound(new { message = "No hay turnos activados." });
+                    // Devolver un estado OK con un mensaje indicando que no hay registros
+                    return Ok(new { message = "No hay turnos activados.", data = (object)null });
                 }
 
                 return Ok(turnos);
