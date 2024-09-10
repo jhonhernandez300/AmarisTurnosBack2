@@ -42,8 +42,7 @@ namespace KontrolarCloud.Controllers
             _context = context;
             _turnoService = turnoService;
         }
-
-        [AllowAnonymous]
+        
         [HttpGet("ContarTurnos/{idUsuario}")]
         public async Task<IActionResult> ContarTurnos(string idUsuario)
         {
@@ -64,9 +63,7 @@ namespace KontrolarCloud.Controllers
                 return BadRequest(new { Message = ex.Message });
             }
         }
-
-
-        [AllowAnonymous]
+       
         [HttpGet("ObtenerTurnosActivados")]
         public async Task<IActionResult> ObtenerTurnosActivados()
         {
@@ -86,8 +83,7 @@ namespace KontrolarCloud.Controllers
                 return StatusCode(500, new { message = $"Error del servidor: {ex.Message}" });
             }
         }
-
-        [AllowAnonymous]
+       
         [HttpGet("ObtenerTurnoPorId/{id}")]
         public async Task<IActionResult> ObtenerTurnoPorId(int id)
         {
@@ -114,8 +110,7 @@ namespace KontrolarCloud.Controllers
                 return StatusCode(500, new { message = $"Error del servidor: {ex.Message}" });
             }             
         }
-
-        [AllowAnonymous]
+        
         [HttpPut("ActualizarTurno")]
         public async Task<IActionResult> ActualizarTurno([FromBody] TurnoCompletoDTO turnoCompletoDto)
         {
@@ -152,8 +147,7 @@ namespace KontrolarCloud.Controllers
                 return StatusCode(500, new { message = $"Error del servidor: {ex.Message}" });
             }             
         }
-
-        [AllowAnonymous]
+        
         [HttpPost("CrearTurno")]
         public async Task<IActionResult> CrearTurno([FromBody] TurnosDTO turnoDto)
         {
